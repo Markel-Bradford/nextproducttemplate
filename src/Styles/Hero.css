@@ -1,0 +1,85 @@
+/* Hero Styles */
+.hero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    max-width: 1800px;
+    margin: 50px auto 0 auto;
+    height: 33%;
+  }
+  
+  .hero-text {
+    padding-left: 5%;
+    line-height: 2rem;
+    color: black;
+    animation: fadein .8s linear;
+  }
+  
+  @keyframes fadein {
+    from {
+      opacity: 0;
+      transform: translateY(-10%);
+    } to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .hero-title {
+    font-size: 4.5vw;
+  }
+  
+  .hero-sub {
+    font-size: 2.5vw;
+  }
+  
+  .hero-img {
+    display: flex;
+    justify-content: end;
+    width: 50%;
+
+  }
+  
+  .hero-photo {
+    display: flex;
+    width: 100%;
+    animation: slideandfade .8s linear;
+  }
+  
+  @media screen and (max-width: 800px) {
+    .hero-container {
+      flex-direction: column;
+    }
+  
+    .hero-text {
+      padding-left: 5%;
+      line-height: 1rem;
+      color: black;
+      animation: fadein .8s linear;
+    }
+  
+    .hero-title {
+      font-size: 10vw;
+    }
+    
+    .hero-sub {
+      font-size: 6vw;
+      text-align: center;
+    }
+  
+    .hero-img {
+      width: 100%;
+    }
+  }
+  
+  @keyframes slideandfade {
+    0% {
+      transform: translateX(60%);
+      opacity: 0;
+    } to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  

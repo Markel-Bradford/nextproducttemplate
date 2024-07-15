@@ -1,0 +1,37 @@
+/* Contact Styles */
+.footer {
+    background: #fff;
+    padding: 10px 0 0 0;
+    border-top: 2px solid #000;
+  }
+  
+  .footer-items{
+    display: flex;
+    gap: 20px;
+  }
+  
+  .footer-links {
+    color: #000;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .ownership {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    font-weight: 700;
+  }
+  
+  @media screen and (max-width: 800px) {
+    .footer-container {
+      flex-direction: column;
+    }
+  }

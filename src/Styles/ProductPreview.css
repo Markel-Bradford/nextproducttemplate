@@ -1,0 +1,101 @@
+/* Popup styles */
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    color: #000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    animation: slideup 0.3s linear;
+    -webkit-animation: slideup 0.3s linear;
+    perspective: 1000;
+    -webkit-perspective: 1000;
+    transition: 1s;
+    max-height: 80%;
+    overflow-y: scroll;
+  }
+  
+  @keyframes slideup {
+    from {
+      top: 80%;
+    }
+    to {
+      top: 50%;
+    }
+  }
+  
+  .popupContent {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 80%; /* Adjust width as needed */
+    max-width: 500px; /* Maximum width for the popup */
+  }
+  
+  .pop-up-title {
+    text-align: center;
+  }
+  
+  .product-img {
+    display: flex;
+    margin: 25px auto;
+    width: 70%;
+  }
+  
+  .product-desc {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .close-btn {
+    position: sticky;
+    top: 10px;
+    left: 95%;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 900;
+  }
+  
+  @media screen and (max-width: 900px) {
+    .popup {
+      position: fixed;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      height: 80%;
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+      z-index: 1000;
+      animation: slideupmobile 0.3s linear;
+      -webkit-animation: slideupmobile 0.3s linear;
+      perspective: 1000;
+      -webkit-perspective: 1000;
+      transition: 1s;
+    }
+  
+    .product-img {
+      width: 85%;
+    }
+  
+    @keyframes slideupmobile {
+      from {
+        top: 80%;
+      }
+      to {
+        top: 55%;
+      }
+    }
+  
+    .close-btn {
+      top: 10px;
+      left: 90%;
+    }
+  }
+  
