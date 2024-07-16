@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Carditems from "./Carditems";
 import ProductPreviewPopup from "./ProductPreview";
-import "../Styles/Cards.css"
+// import "../Styles/Cards.css"
 import "../Styles/ProductPreview.css"
 
 interface Product {
