@@ -12,13 +12,19 @@ const Hero: React.FC = () => {
       {/* Preload the image */}
       <PreloadImage src={imageUrl} />
       <div className="leading-8 w-full text-black animate-fadein">
-        <h1 className="text-4xl md:text-7xl max-lg:text-center">Platinum Threads</h1>
-        <p className="text-2xl  md:text-5xl max-lg:text-center">Let your style shine</p>
+        <h1 className="text-4xl md:text-7xl max-lg:text-center">
+          Platinum Threads
+        </h1>
+        <p className="text-2xl  md:text-5xl max-lg:text-center">
+          Let your style shine
+        </p>
       </div>
       <div className="flex justify-end w-1/2 lg:w-full max-lg:mt-12">
-        <img src={imageUrl} 
-          alt="Model with shades"  
-          className="w-full flex animate-slideandfade max-lg:w-full"/>
+        <img
+          src={imageUrl}
+          alt="Model with shades"
+          className="w-full flex animate-slideandfade max-lg:w-full"
+        />
       </div>
     </div>
   );

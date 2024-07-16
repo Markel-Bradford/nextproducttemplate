@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import "../Styles/Navbar.css"
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -21,7 +23,7 @@ const Navbar = () => {
             <img className="logo" src="/pthreads.png" alt="" />
           </Link>
           <div className="menu-icon" onClick={handleClick}>
-            <i className={click ? "fas fa-times" : "fas fa-bars"} />{" "}
+          <FontAwesomeIcon icon={click ? faTimes : faBars} />
             {/*? is equal to true. : creates toggle from one item to another.  */}
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>

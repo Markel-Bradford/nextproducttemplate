@@ -1,23 +1,44 @@
 import React from "react";
 import FeaturedCards from "./FeaturedCards";
-import "../Styles/ProductInfo.css"
 
 const ProductInfo = () => {
   return (
-    <div className="product-info-container">
-      <div className="section-container section-container-mobile">
-        <div className="section-img">
+    <div
+      className="
+      py-12
+      bg-slate-950
+      text-white
+      [&>*:nth-child(even)]:bg-white 
+      [&>*:nth-child(even)]:text-black
+    ">
+      <div
+        className="
+      flex 
+      w-full 
+      justify-center 
+      items-center 
+      max-lg:flex-col-reverse">
+        <div className="w-full px-6">
           <img
             src="/tshirtmodel.jpeg"
             alt=""
-            className="product-info-img"
+            className="
+            flex 
+            w-full 
+            py-12"
           />
         </div>
-        <div className="section-text">
-          <h2 className="info-title">
+        <div className="px-6 w-full">
+          <h2
+            className="
+          text-4xl 
+          pb-6 
+          max-lg:text-center 
+          max-lg:text-2xl
+          ">
             Platinum styles for Platinum people
           </h2>
-          <p className="info-text">
+          <p className="text-xl max-lg:text-lg">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -28,12 +49,21 @@ const ProductInfo = () => {
           </p>
         </div>
       </div>
-      <div className="section-container">
-        <div className="section-text">
-          <h2 className="info-title">
+      <div
+        className="flex 
+      w-full 
+      justify-center 
+      items-center 
+      max-lg:flex-col">
+        <div className="w-full pt-12 px-6">
+          <h2
+            className="text-4xl 
+          pb-6 
+          max-lg:text-center 
+          max-lg:text-2xl">
             Platinum standard materials
           </h2>
-          <p className="info-text">
+          <p className="text-xl max-lg:text-lg">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -43,14 +73,28 @@ const ProductInfo = () => {
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
         </div>
-        <div className="section-img">
-          <img src="/shirttag.jpeg" alt="" className="product-info-img" />
+        <div className="px-6 w-full">
+          <img
+            src="/shirttag.jpeg"
+            alt=""
+            className="
+            flex 
+            w-full 
+            py-6"
+          />
         </div>
       </div>
-      <div className="section-container featured">
-        <h2 className="info-title">Featured Products</h2>
-      </div>
+      <div className="
+      flex-col
+      w-full 
+      justify-center 
+      items-center 
+      max-lg:flex-col
+      pt-12
+      ">
+        <h2 className="text-4xl max-lg:text-2xl text-center">Featured Products</h2>
       <FeaturedCards />
+      </div>
     </div>
   );
 };
