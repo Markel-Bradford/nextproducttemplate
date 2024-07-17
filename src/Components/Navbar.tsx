@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 
 
 
@@ -19,7 +20,7 @@ const Navbar = () => {
       <nav className="bg-white h-20 flex justify-center items-center text-xl sticky top-0 z-[999] shadow-[0_4px_8px_rgba(0,0,0,0.6)]" >
         <div className="flex justify-center items-center h-20 max-w-[1500px] w-4/5 max-lg:justify-between">
           <Link href="/" className="flex justify-self-start items-center cursor-pointer no-underline ">
-            <img className="w-28" src="/pthreads.png" alt="" />
+            <Image width={100} height={200} className="w-28" src="/pthreads.png" alt="" />
           </Link>
           <div className="hidden max-lg:contents max-lg:absolute max-lg:right-5 text-3xl" onClick={handleClick}>
           <FontAwesomeIcon icon={click ? faTimes : faBars} />

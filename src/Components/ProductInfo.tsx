@@ -1,5 +1,6 @@
 import React from "react";
 import FeaturedCards from "./FeaturedCards";
+import Image from "next/image";
 
 const ProductInfo = () => {
   return (
@@ -21,7 +22,9 @@ const ProductInfo = () => {
       px-24
       max-lg:px-0">
         <div className="w-full px-6">
-          <img
+          <Image
+        width={500}
+        height={750}
             src="/tshirtmodel.jpeg"
             alt=""
             className="
@@ -84,7 +87,9 @@ const ProductInfo = () => {
           </p>
         </div>
         <div className="px-6 w-full">
-          <img
+          <Image
+        width={500}
+        height={750}
             src="/shirttag.jpeg"
             alt=""
             className="
