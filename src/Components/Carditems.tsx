@@ -30,8 +30,8 @@ const Carditems: React.FC<CardItemsProps> = (props) => {
     <li
       ref={ref}
       className={classNames(
-        "relative flex flex-col shadow-xl overflow-hidden no-underline bg-slate-100 transition-opacity duration-700",
-        { "opacity-100": inView, "opacity-0": !inView }
+        "relative flex flex-col shadow-[0_8px_12px_rgba(0,0,0,0.7)] overflow-hidden no-underline bg-slate-100",
+        { "animate-fadein": inView, "opacity-0": !inView }
       )}
       onClick={() => props.onClick(props.product)}
     >

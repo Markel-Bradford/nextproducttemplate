@@ -41,7 +41,7 @@ const SideMenu: React.FC<SideMenuProps> = ({ filters, setFilters }) => {
   };
 
   return (
-    <div className={click ? "inline-block w-[300px] h-[100vh] fixed top-[80px] bg-white left-[52px] opacity-100 transition-all z-[999] shadow-xl max-[1800px]:left-0" : "inline-block w-[300px] h-[100vh] fixed top-[80px] -left-full opacity-100 transition-all overflow-hidden bg-slate-100 z-[999]"}>
+    <div className={click ? "inline-block w-[300px] h-[100vh] fixed top-[80px] bg-white left-[52px] opacity-100 transition-all z-[999] shadow-[0_10px_10px_rgba(0,0,0,0.6)] max-[1800px]:left-0" : "inline-block w-[300px] h-[100vh] fixed top-[80px] -left-full opacity-100 transition-all overflow-hidden bg-slate-100 z-[999]"}>
       <div className="block 
       fixed 
       top-32 
@@ -58,13 +58,13 @@ const SideMenu: React.FC<SideMenuProps> = ({ filters, setFilters }) => {
         {/* ? is equal to true. : creates toggle from one item to another. */}
       </div>
       <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center relative text-black my-20 mx-auto w-[156px]">
-        <h2 className="text-2xl">Filter Options</h2>
+        <h2 className="text-2xl my-6 font-bold">Filter Options</h2>
         <div className="flex flex-col justify-start items-start">
-          <label htmlFor="label" className="text-[28px]">Category</label>
+          <label htmlFor="label" className="text-[28px]">Categories</label>
           <div>
-            <label>
+            <label className="text-lg">
               <input
-                className="text-white ml-5 mr-[10px]"
+                className="text-white ml-6 mr-[10px]"
                 type="checkbox"
                 value="T-Shirt"
                 checked={localFilters.label.includes("T-Shirt")}
@@ -74,9 +74,9 @@ const SideMenu: React.FC<SideMenuProps> = ({ filters, setFilters }) => {
             </label>
           </div>
           <div>
-            <label>
+            <label className="text-lg">
               <input
-                className="text-white ml-5 mr-[10px]"
+                className="text-white ml-6 mr-[10px]"
                 type="checkbox"
                 value="Jeans"
                 checked={localFilters.label.includes("Jeans")}
@@ -86,9 +86,9 @@ const SideMenu: React.FC<SideMenuProps> = ({ filters, setFilters }) => {
             </label>
           </div>
           <div>
-            <label>
+            <label className="text-lg">
               <input
-                className="text-white ml-5 mr-[10px]"
+                className="text-white ml-6 mr-[10px]"
                 type="checkbox"
                 value="Joggers"
                 checked={localFilters.label.includes("Joggers")}
@@ -98,9 +98,9 @@ const SideMenu: React.FC<SideMenuProps> = ({ filters, setFilters }) => {
             </label>
           </div>
           <div>
-            <label>
+            <label className="text-lg">
               <input
-                className="text-white ml-5 mr-[10px]"
+                className="text-white ml-6 mr-[10px]"
                 type="checkbox"
                 value="Jackets"
                 checked={localFilters.label.includes("Jackets")}

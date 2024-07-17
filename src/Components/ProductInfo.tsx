@@ -17,7 +17,9 @@ const ProductInfo = () => {
       w-full 
       justify-center 
       items-center 
-      max-lg:flex-col-reverse">
+      max-lg:flex-col-reverse
+      px-24
+      max-lg:px-0">
         <div className="w-full px-6">
           <img
             src="/tshirtmodel.jpeg"
@@ -32,14 +34,15 @@ const ProductInfo = () => {
         <div className="px-6 w-full">
           <h2
             className="
-          text-4xl 
+          text-[2.2vw]
+          font-semibold 
           pb-6 
           max-lg:text-center 
           max-lg:text-2xl
           ">
             Platinum styles for Platinum people
           </h2>
-          <p className="text-xl max-lg:text-lg">
+          <p className="text-[1.5vw] max-lg:text-lg">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -55,16 +58,22 @@ const ProductInfo = () => {
       w-full 
       justify-center 
       items-center 
-      max-lg:flex-col">
+      max-lg:flex-col
+      pt-12
+      pb-4
+      px-24
+      max-lg:px-0">
         <div className="w-full pt-12 px-6">
           <h2
-            className="text-4xl 
+            className="
+            text-[2.2vw]
+            font-semibold  
           pb-6 
           max-lg:text-center 
           max-lg:text-2xl">
             Platinum standard materials
           </h2>
-          <p className="text-xl max-lg:text-lg">
+          <p className="text-[1.5vw] max-lg:text-lg">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut

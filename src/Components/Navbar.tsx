@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useState } from "react";
-import "../Styles/Navbar.css"
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -17,42 +16,45 @@ const Navbar = () => {
   const closeMobileMenu = () => setClick(false);
   
   return (
-      <nav className={'navbar'} >
-        <div className="navbar-container">
-          <Link href="/" className="navbar-logo">
-            <img className="logo" src="/pthreads.png" alt="" />
+      <nav className="bg-white h-20 flex justify-center items-center text-xl sticky top-0 z-[999] shadow-[0_4px_8px_rgba(0,0,0,0.6)]" >
+        <div className="flex justify-center items-center h-20 max-w-[1500px] w-4/5 max-lg:justify-between">
+          <Link href="/" className="flex justify-self-start items-center cursor-pointer no-underline ">
+            <img className="w-28" src="/pthreads.png" alt="" />
           </Link>
-          <div className="menu-icon" onClick={handleClick}>
+          <div className="hidden max-lg:contents max-lg:absolute max-lg:right-5 text-3xl" onClick={handleClick}>
           <FontAwesomeIcon icon={click ? faTimes : faBars} />
             {/*? is equal to true. : creates toggle from one item to another.  */}
           </div>
-          <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
-              <Link href="/" className="nav-links" onClick={closeMobileMenu}>
+          <ul className={`${
+            click ? "left-0 bg-white z-10" : "left-[-110%]"
+          } inline-block w-screen h-screen absolute top-[80px] opacity-100 transition-all duration-500 ease overflow-hidden lg:flex lg:static lg:w-auto lg:h-auto lg:opacity-100 lg:bg-transparent lg:shadow-none lg:ml-auto`}
+        >
+            <li className="h-20">
+              <Link href="/" className="text-black flex items-center no-underline px-4 h-full hover:border-b-zinc-600 hover:border-b-solid hover:border-b-[4px] transition-all" onClick={closeMobileMenu}>
                 Home
               </Link>
             </li>
             
-            <li className="nav-item">
+            <li className="h-20">
               <Link
                 href="/mens"
-                className="nav-links"
+                className="text-black flex items-center no-underline px-4 h-full hover:border-b-zinc-600 hover:border-b-solid hover:border-b-[4px] transition-all"
                 onClick={closeMobileMenu}>
                 Mens
               </Link>
             </li>
-            <li className="nav-item">
+            <li className="h-20">
               <Link
                 href="/womens"
-                className="nav-links"
+                className="text-black flex items-center no-underline px-4 h-full hover:border-b-zinc-600 hover:border-b-solid hover:border-b-[4px] transition-all"
                 onClick={closeMobileMenu}>
                 Womens
               </Link>
             </li>
-            <li className="nav-item">
+            <li className="h-20">
               <Link
                 href="/contact"
-                className="nav-links"
+                className="text-black flex items-center no-underline px-4 h-full hover:border-b-zinc-600 hover:border-b-solid hover:border-b-[4px] transition-all"
                 onClick={closeMobileMenu}>
                 Contact
               </Link>
