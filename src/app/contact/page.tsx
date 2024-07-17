@@ -39,7 +39,7 @@ const Contact: React.FC = () => {
       </h1>
       <div className="flex justify-around max-w-[1200px] mx-auto max-lg:flex-col">
         <div className="flex flex-col items-center w-1/2 max-lg:w-full max-lg:p-6">
-          <h2 className="text-2xl pb-6">We'd love to hear from you!</h2>
+          <h2 className="text-2xl pb-6">We&apos;d love to hear from you!</h2>
           <p className="text-lg">
             Your feedback us important to is. Whether you have enjoyed your
             experience or ran into difficulty on our platform, please feel free
