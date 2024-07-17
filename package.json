@@ -4,7 +4,7 @@
   "private": true,
   "main": "server.js",
   "scripts": {
-    "dev": "node server.js",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -14,14 +14,17 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "classnames": "^2.5.1",
+    "css-loader": "^7.1.2",
     "emailjs-com": "^3.2.0",
     "express": "^4.19.2",
     "framer-motion": "^11.3.2",
     "next": "14.2.5",
+    "postcss-loader": "^8.1.1",
     "react": "^18",
     "react-dom": "^18",
     "react-intersection-observer": "^9.13.0",
-    "sass": "^1.77.8"
+    "sass": "^1.77.8",
+    "style-loader": "^4.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",
