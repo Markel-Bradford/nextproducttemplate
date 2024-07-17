@@ -1,5 +1,6 @@
-"use client"
+"use client";
 
+// WomensCards.tsx
 import React, { useEffect, useState } from "react";
 import Carditems from "./Carditems";
 import ProductPreviewPopup from "./ProductPreview";
@@ -19,15 +20,15 @@ interface Filters {
 const cardData: Product[] = [
   {
     src: "/womensdenim.jpg",
-    text:"Platinum White T",
+    text: "Platinum White T",
     description: "Classic T-shirt for men. Comfortable and stylish.",
-    label:"T-Shirt",
+    label: "T-Shirt",
   },
   {
     src: "/womensdenim.jpg",
     text: "Platinum White T",
     description: "Trendy skinny jeans for a modern look.",
-    label:"T-Shirt",
+    label: "T-Shirt",
   },
   {
     src: "/womensdenim.jpg",
@@ -115,18 +116,16 @@ const cardData: Product[] = [
   },
 ];
 
-
 const WomensCards: React.FC = () => {
-  const [selectedProduct, setselectedProduct] = useState<Product | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [filteredCards, setFilteredCards] = useState<Product[]>(cardData);
   const [filters, setFilters] = useState<Filters>({
     label: [],
   });
-  
+
   useEffect(() => {
-    // Preload all images
     const preloadImages = (images: Product[]) => {
-      images.forEach(image => {
+      images.forEach((image) => {
         const img = new Image();
         img.src = image.src;
       });
@@ -134,16 +133,6 @@ const WomensCards: React.FC = () => {
 
     preloadImages(cardData);
   }, []);
-
-  function showPreview(product: Product) {
-    // Set the state to the selected product
-    setselectedProduct(product);
-  }
-
-  function hidePreview() {
-    // Reset the state to null
-    setselectedProduct(null);
-  }
 
   useEffect(() => {
     applyFilters();
@@ -153,7 +142,7 @@ const WomensCards: React.FC = () => {
     let filtered = cardData;
 
     if (filters.label.length > 0) {
-      filtered = filtered.filter(card => filters.label.includes(card.label));
+      filtered = filtered.filter((card) => filters.label.includes(card.label));
     }
 
     setFilteredCards(filtered);
@@ -172,16 +161,19 @@ const WomensCards: React.FC = () => {
               text={card.text}
               label={card.label}
               description={card.description}
-              onClick={() => showPreview(card)}
+              onClick={() => setSelectedProduct(card)}
             />
           ))}
         </div>
       </div>
       {selectedProduct && (
-        <ProductPreviewPopup product={selectedProduct} onClose={hidePreview} />
+        <ProductPreviewPopup
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+        />
       )}
     </div>
   );
-}
+};
 
 export default WomensCards;
