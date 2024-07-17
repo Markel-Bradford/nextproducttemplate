@@ -6,7 +6,7 @@ const ProductInfo = () => {
     <div
       className="
       py-12
-      bg-slate-950
+      bg-zinc-950
       text-white
       [&>*:nth-child(even)]:bg-white 
       [&>*:nth-child(even)]:text-black
@@ -24,8 +24,9 @@ const ProductInfo = () => {
             alt=""
             className="
             flex 
-            w-full 
-            py-12"
+            w-[40vw] 
+            py-12
+            max-lg:w-full"
           />
         </div>
         <div className="px-6 w-full">
@@ -79,12 +80,14 @@ const ProductInfo = () => {
             alt=""
             className="
             flex 
-            w-full 
-            py-6"
+            w-[40vw] 
+            py-6
+            max-lg:w-full"
           />
         </div>
       </div>
-      <div className="
+      <div
+        className="
       flex-col
       w-full 
       justify-center 
@@ -92,8 +95,10 @@ const ProductInfo = () => {
       max-lg:flex-col
       pt-12
       ">
-        <h2 className="text-4xl max-lg:text-2xl text-center">Featured Products</h2>
-      <FeaturedCards />
+        <h2 className="text-4xl max-lg:text-2xl text-center">
+          Featured Products
+        </h2>
+        <FeaturedCards />
       </div>
     </div>
   );

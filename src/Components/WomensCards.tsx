@@ -4,14 +4,12 @@ import React, { useEffect, useState } from "react";
 import Carditems from "./Carditems";
 import ProductPreviewPopup from "./ProductPreview";
 import SideMenu from "./SideMenu";
-import "../Styles/Cards.css";
 
 interface Product {
   src: string;
   text: string;
   description: string;
   label: string;
-  path: string;
 }
 
 interface Filters {
@@ -24,112 +22,96 @@ const cardData: Product[] = [
     text:"Platinum White T",
     description: "Classic T-shirt for men. Comfortable and stylish.",
     label:"T-Shirt",
-    path: ""
   },
   {
     src: "/womensdenim.jpg",
     text: "Platinum White T",
     description: "Trendy skinny jeans for a modern look.",
     label:"T-Shirt",
-    path: ""
   },
   {
     src: "/womensdenim.jpg",
     text: "Platinum White T",
     description: "Classic T-shirt for men. Comfortable and stylish.",
     label: "T-Shirt",
-    path: ""
   },
   {
     src: "/womensdenim.jpg",
     text: "Platinum White T",
     description: "Classic T-shirt for men. Comfortable and stylish.",
     label: "T-Shirt",
-    path: ""
   },
   {
     src: "/womensdenim.jpg",
     text: "Platinum White T",
     description: "Classic T-shirt for men. Comfortable and stylish.",
     label: "T-Shirt",
-    path: ""
   },
   {
     src: "/womensdenim.jpg",
     text: "Platinum White T",
     description: "Classic T-shirt for men. Comfortable and stylish.",
     label: "T-Shirt",
-    path: ""
   },
   {
     src: "/womensdenim.jpg",
     text: "Platinum Joggers",
     description: "Classic T-shirt for men. Comfortable and stylish.",
     label: "Joggers",
-    path: ""
   },
   {
     src: "/womensdenim.jpg",
     text: "Platinum Joggers",
     description: "Classic T-shirt for men. Comfortable and stylish.",
     label: "Joggers",
-    path: ""
   },
   {
     src: "/womensdenim.jpg",
     text: "Platinum Joggers",
     description: "Classic T-shirt for men. Comfortable and stylish.",
     label: "Joggers",
-    path: ""
   },
   {
     src: "/womensdenim.jpg",
     text: "Platinum Skinny's",
     description: "Classic T-shirt for men. Comfortable and stylish.",
     label: "Jeans",
-    path: ""
   },
   {
     src: "/womensdenim.jpg",
     text: "Platinum Skinny's",
     description: "Classic T-shirt for men. Comfortable and stylish.",
     label: "Jeans",
-    path: ""
   },
   {
     src: "/womensdenim.jpg",
     text: "Platinum Skinny's",
     description: "Classic T-shirt for men. Comfortable and stylish.",
     label: "Jeans",
-    path: ""
   },
   {
     src: "/womensdenim.jpg",
     text: "Platinum Skinny's",
     description: "Classic T-shirt for men. Comfortable and stylish.",
     label: "Jeans",
-    path: ""
   },
   {
     src: "/womensdenim.jpg",
     text: "Platinum Skinny's",
     description: "Classic T-shirt for men. Comfortable and stylish.",
     label: "Jeans",
-    path: ""
   },
   {
     src: "/womensdenim.jpg",
     text: "Platinum Leather",
     description: "Classic T-shirt for men. Comfortable and stylish.",
     label: "Jackets",
-    path: ""
   },
   {
     src: "/womensdenim.jpg",
     text: "Platinum Leather",
     description: "Classic T-shirt for men. Comfortable and stylish.",
     label: "Jackets",
-    path: ""
   },
 ];
 
@@ -178,25 +160,21 @@ const WomensCards: React.FC = () => {
   };
 
   return (
-    <div className="cards">
-      <SideMenu setFilters={setFilters} filters={filters}/>
-      <div className="cardsContainer">
-        <div
-          className="cardsWrapper">
-          <ul className="cardsItems">
-            {filteredCards.map((card, index) => (
-              <Carditems
-                key={index}
-                product={card}
-                src={card.src}
-                text={card.text}
-                label={card.label}
-                description={card.description}
-                path={card.path}
-                onClick={() => showPreview(card)}
-              />
-            ))}
-          </ul>
+    <div className="relative mx-auto my-0 p-16">
+      <SideMenu setFilters={setFilters} filters={filters} />
+      <div className="w-full mx-auto my-0 p-2.5">
+        <div className="relative mt-12 mb-11 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
+          {filteredCards.map((card, index) => (
+            <Carditems
+              key={index}
+              product={card}
+              src={card.src}
+              text={card.text}
+              label={card.label}
+              description={card.description}
+              onClick={() => showPreview(card)}
+            />
+          ))}
         </div>
       </div>
       {selectedProduct && (

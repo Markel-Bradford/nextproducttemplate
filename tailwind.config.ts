@@ -12,6 +12,7 @@ const config: Config = {
       animation: {
         fadein: 'fadein 0.8s linear',
         slideandfade: 'slideandfade 0.8s linear',
+        slideup: 'slideup 0.3s linear'
       },
       keyframes: {
         fadein: {
@@ -21,6 +22,10 @@ const config: Config = {
         slideandfade: {
           '0%': { transform: 'translateX(60%)', opacity: "0" },
           '100%': { transform: 'translateX(0)', opacity: "1" },
+        },
+        slideup: {
+          '0%': { top: '80%' },
+          '100%': { top: '50%' }
         },
       },
     },

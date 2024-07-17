@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
-import "../Styles/ProductPreview.css";
 
 interface Product {
   src: string;
@@ -28,22 +27,46 @@ const ProductPreviewPopup: React.FC<ProductPreviewPopupProps> = (props) => {
   if (!props.product) return null; // If no product is selected, don't render anything
 
   return (
-    <div className="popup">
-      <div className="popup-content">
-        <span className="close-btn" onClick={props.onClose}>
+    <div className="
+    flex
+    top-1/2
+    left-1/2
+    -translate-y-1/2
+    -translate-x-1/2
+    bg-white
+    text-black
+    shadow-2xl
+    z-[1000]
+    animate-slideup
+    transition-[1s]
+    fixed
+    max-h-[75%]
+    overflow-y-scroll
+    max-md:top-[55%]
+    max-md:w-11/12
+    ">
+      <div className="
+      bg-white
+      p-5
+      relative
+      w-full
+      max-w-[650px]
+      "
+      >
+        <span className="sticky top-2.5 left-[90%] text-xl font-extrabold cursor-pointer" onClick={props.onClose}>
           x
         </span>
         {imageLoaded ? (
           <img
-            className="product-img"
+            className="flex my-[25px] w-full mx-auto"
             src={props.product.src}
             alt={props.product.text}
           />
         ) : (
           <div>Loading...</div>
         )}
-        <h2 className="pop-up-title">{props.product.text}</h2>
-        <p className="product-desc">{props.product.description}</p>
+        <h2 className="text-center text-3xl">{props.product.text}</h2>
+        <p className="flex justify-center text-lg p-5">{props.product.description}</p>
         {/* Add other product details as needed */}
       </div>
     </div>
