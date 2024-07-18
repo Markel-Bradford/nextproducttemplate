@@ -17,7 +17,7 @@ const Navbar = () => {
   const closeMobileMenu = () => setClick(false);
   
   return (
-      <nav className="bg-white h-20 flex justify-center items-center text-xl sticky top-0 z-[999] shadow-[0_4px_8px_rgba(0,0,0,0.6)]" >
+      <nav className="bg-white h-20 flex justify-center items-center text-xl sticky top-0 z-[1000] shadow-[0_4px_8px_rgba(0,0,0,0.6)]" >
         <div className="flex justify-center items-center h-20 max-w-[1500px] w-4/5 max-lg:justify-between">
           <Link href="/" className="flex justify-self-start items-center cursor-pointer no-underline ">
             <Image width={100} height={200} className="w-28" src="/pthreads.png" alt="" />
