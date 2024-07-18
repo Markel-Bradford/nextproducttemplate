@@ -1,6 +1,10 @@
 import Navbar from "@/Components/Navbar";
 import "../styles/globals.css";
 import Footer from "@/Components/Footer";
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css'; // Import FontAwesome styles
+
+config.autoAddCss = false; // Disable auto-adding FontAwesome CSS
 
 export const metadata = {
   title: "Product Template",
@@ -14,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-     <body>  
+     <body> 
         <Navbar />
         {children}
         <Footer />
