@@ -27,11 +27,12 @@ const Navbar = () => {
             {/*? is equal to true. : creates toggle from one item to another.  */}
           </div>
           <ul className={`${
-            click ? "left-0 bg-white z-10" : "left-[-110%]"
+            click ? "left-0 bg-white z-105" : "left-[-110%]"
           } inline-block w-screen h-screen absolute top-[80px] opacity-100 transition-all duration-500 ease overflow-hidden lg:flex lg:static lg:w-auto lg:h-auto lg:opacity-100 lg:bg-transparent lg:shadow-none lg:ml-auto`}
         >
             <li className="h-20">
-              <Link href="/" className="text-black flex items-center no-underline px-4 h-full hover:border-b-zinc-600 hover:border-b-solid hover:border-b-[4px] transition-all" onClick={closeMobileMenu}>
+              <Link href="/" 
+              className="max-lg:table max-lg:w-full max-lg:text-center max-lg:p-8 max-lg:hover:bg-black max-lg:hover:text-white text-black flex items-center no-underline px-4 h-full hover:border-b-zinc-600 hover:border-b-solid hover:border-b-[4px] transition-all" onClick={closeMobileMenu}>
                 Home
               </Link>
             </li>
@@ -39,7 +40,7 @@ const Navbar = () => {
             <li className="h-20">
               <Link
                 href="/mens"
-                className="text-black flex items-center no-underline px-4 h-full hover:border-b-zinc-600 hover:border-b-solid hover:border-b-[4px] transition-all"
+                className="max-lg:table max-lg:w-full max-lg:text-center max-lg:p-8 max-lg:hover:bg-black max-lg:hover:text-white text-black flex items-center no-underline px-4 h-full hover:border-b-zinc-600 hover:border-b-solid hover:border-b-[4px] transition-all"
                 onClick={closeMobileMenu}>
                 Mens
               </Link>
@@ -47,7 +48,7 @@ const Navbar = () => {
             <li className="h-20">
               <Link
                 href="/womens"
-                className="text-black flex items-center no-underline px-4 h-full hover:border-b-zinc-600 hover:border-b-solid hover:border-b-[4px] transition-all"
+                className="max-lg:table max-lg:w-full max-lg:text-center max-lg:p-8 max-lg:hover:bg-black max-lg:hover:text-white text-black flex items-center no-underline px-4 h-full hover:border-b-zinc-600 hover:border-b-solid hover:border-b-[4px] transition-all"
                 onClick={closeMobileMenu}>
                 Womens
               </Link>
@@ -55,7 +56,7 @@ const Navbar = () => {
             <li className="h-20">
               <Link
                 href="/contact"
-                className="text-black flex items-center no-underline px-4 h-full hover:border-b-zinc-600 hover:border-b-solid hover:border-b-[4px] transition-all"
+                className="max-lg:table max-lg:w-full max-lg:text-center max-lg:p-8 max-lg:hover:bg-black max-lg:hover:text-white text-black flex items-center no-underline px-4 h-full hover:border-b-zinc-600 hover:border-b-solid hover:border-b-[4px] transition-all"
                 onClick={closeMobileMenu}>
                 Contact
               </Link>

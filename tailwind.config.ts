@@ -16,7 +16,8 @@ const config: Config = {
         fade: 'fade 0.8s linear'
       },
       gridTemplateColumns: {
-        'navbar': 'repeat(4, auto)'
+        'navbar': 'repeat(4, auto)',
+        'cards': 'repeat(auto-fit,minmax(250px, 1fr))'
       },
       keyframes: {
         fadein: {

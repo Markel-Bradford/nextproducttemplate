@@ -58,7 +58,7 @@ const Cards: React.FC = () => {
   return (
     <div className="relative mx-auto my-0 p-16">
       <div className="w-full mx-auto my-0">
-        <div className="relative mt-6 max-lg:mt-0 mb-11 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="relative mt-6 max-lg:mt-0 mb-11 grid grid-cols-cards gap-12">
           {cardData.map((card, index) => (
             <Carditems
               key={index}
