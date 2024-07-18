@@ -40,9 +40,9 @@ const Carditems: React.FC<CardItemsProps> = (props) => {
           className="relative w-full pt-[67%] overflow-hidden"
           data-category={props.label}>
           <Image
-          width={500}
-          height={350}
-          priority
+            width={500}
+            height={350}
+            priority
             src={props.src}
             alt="Featured photos"
             className="absolute top-0 right-0 bottom-0 left-0 block w-full h-full object-cover object-center transition-all"

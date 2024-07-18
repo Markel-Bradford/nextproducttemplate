@@ -12,15 +12,15 @@ const Hero: React.FC = () => {
         <h1 className="text-4xl font-bold md:text-7xl max-lg:text-center">
           Platinum Threads
         </h1>
-        <p className="text-2xl  md:text-5xl max-lg:text-center">
+        <p className="text-2xl md:text-5xl max-lg:text-center">
           Let your style shine
         </p>
       </div>
       <div className="flex justify-end w-[50%] lg:w-full max-lg:mt-12">
         <Image
-        width={500}
-        height={750}
-        priority
+          width={500}
+          height={750}
+          priority
           src={imageUrl}
           alt="Model with shades"
           className="w-[75%] flex animate-slideandfade max-lg:w-full"
