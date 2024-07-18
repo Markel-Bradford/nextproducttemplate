@@ -37,7 +37,8 @@ const Carditems: React.FC<CardItemsProps> = (props) => {
       onClick={() => props.onClick(props.product)}>
       <div className="flex flex-col w-full no-underline justify-center items-center p-5 cursor-pointer">
         <figure
-          className="relative w-full pt-[67%] overflow-hidden"
+          className="relative w-full pt-[67%] overflow-hidden
+          after:content-picwrap after:absolute after:bottom-0 after:ml-3 after:py-1.5 after:px-2 after:max-w-picWrapLabel after:text-xl after:font-bold after:bg-black after:box-border after:text-white"
           data-category={props.label}>
           <Image
             width={500}
