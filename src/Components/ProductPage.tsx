@@ -35,13 +35,13 @@ const ProductPage: React.FC<ProductPageProps> = (props) => {
   if (!props.product) return null;
 
   return (
-    <div className="max-lg:top-[80px] fixed max-w-[1800px] mx-auto inset-0 bg-white z-50 flex flex-col items-center justify-center p-5">
+    <div className="max-lg:top-[80px] fixed max-w-[1800px] h-full mx-auto inset-0 bg-white z-50 flex flex-col items-center justify-center p-5">
       <button className="absolute bg-black top-12 right-5 text-white text-lg py-3 px-6 border-black border-solid border-2 hover:bg-gray-700 duration-100" onClick={props.onClose}>
         Back
       </button>
       {imageLoaded ? (
         <Image
-          className="my-5 max-md:w-full"
+          className="mt-12 mb-6 max-md:w-full"
           src={props.product.src}
           alt={props.product.text}
           width={750}
