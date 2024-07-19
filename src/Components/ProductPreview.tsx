@@ -1,5 +1,6 @@
-"use client"
+"use client";
 
+import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 
 interface Product {
@@ -18,7 +19,7 @@ const ProductPreviewPopup: React.FC<ProductPreviewPopupProps> = (props) => {
   
   useEffect(() => {
     if (props.product) {
-      const img = new Image();
+      const img = new window.Image(); // Rename the local Image object to img
       img.src = props.product.src;
       img.onload = () => setImageLoaded(true);
     }
@@ -28,7 +29,6 @@ const ProductPreviewPopup: React.FC<ProductPreviewPopupProps> = (props) => {
 
   return (
     <div className="
-    flex
     top-1/2
     left-1/2
     -translate-y-1/2
@@ -57,10 +57,12 @@ const ProductPreviewPopup: React.FC<ProductPreviewPopupProps> = (props) => {
           x
         </span>
         {imageLoaded ? (
-          <img
+          <Image
             className="flex my-[25px] w-full mx-auto"
             src={props.product.src}
             alt={props.product.text}
+            width={750}
+            height={500}
           />
         ) : (
           <div>Loading...</div>

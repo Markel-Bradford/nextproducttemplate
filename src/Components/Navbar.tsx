@@ -22,7 +22,7 @@ const Navbar = () => {
           <Link href="/" className="flex justify-self-start items-center cursor-pointer no-underline ">
             <Image width={100} height={200} className="w-28" src="/pthreads.png" alt="" />
           </Link>
-          <div className="hidden max-lg:contents max-lg:absolute max-lg:right-5 text-3xl" onClick={handleClick}>
+          <div className="hidden max-lg:contents max-lg:absolute max-lg:right-5 text-3xl cursor-pointer" onClick={handleClick}>
           <FontAwesomeIcon icon={click ? faTimes : faBars} />
             {/*? is equal to true. : creates toggle from one item to another.  */}
           </div>

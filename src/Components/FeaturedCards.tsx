@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Carditems from "./Carditems";
 import ProductPreviewPopup from "./ProductPreview";
+import ProductPage from "./ProductPage";
 
 interface Product {
   src: string;
@@ -34,6 +35,7 @@ const cardData: Product[] = [
 
 const Cards: React.FC = () => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [isProductPage, setIsProductPage] = useState(false)
 
   useEffect(() => {
     // Preload all images
@@ -47,13 +49,20 @@ const Cards: React.FC = () => {
     preloadImages(cardData);
   }, []);
 
-  function showPreview(product: Product) {
+  const showPreview = (product: Product) => {
     setSelectedProduct(product);
-  }
+    setIsProductPage(false)
+  };
 
-  function hidePreview() {
+  const showProductPage = (product: Product) => {
+    setSelectedProduct(product);
+    setIsProductPage(true);
+  };
+
+  const hidePreview = () => {
     setSelectedProduct(null);
-  }
+    setIsProductPage(false)
+  };
 
   return (
     <div className="relative mx-auto my-0 p-16">
@@ -62,18 +71,23 @@ const Cards: React.FC = () => {
           {cardData.map((card, index) => (
             <Carditems
               key={index}
+              item={card}
               product={card}
               src={card.src}
               text={card.text}
               label={card.label}
               description={card.description}
-              onClick={() => showPreview(card)}
+              onClick={showPreview}
+              onViewProduct={showProductPage}
             />
           ))}
         </div>
       </div>
-      {selectedProduct && (
+      {selectedProduct && !isProductPage &&  (
         <ProductPreviewPopup product={selectedProduct} onClose={hidePreview} />
+      )}
+      {selectedProduct && isProductPage && (
+        <ProductPage product={selectedProduct} onClose={hidePreview} />
       )}
     </div>
   );

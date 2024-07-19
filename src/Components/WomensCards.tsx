@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import Carditems from "./Carditems";
 import ProductPreviewPopup from "./ProductPreview";
 import SideMenu from "./SideMenu";
+import ProductPage from "./ProductPage";
 
 interface Product {
   src: string;
@@ -118,6 +119,7 @@ const cardData: Product[] = [
 
 const WomensCards: React.FC = () => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [isProductPage, setIsProductPage] = useState(false)
   const [filteredCards, setFilteredCards] = useState<Product[]>(cardData);
   const [filters, setFilters] = useState<Filters>({
     label: [],
@@ -133,6 +135,21 @@ const WomensCards: React.FC = () => {
 
     preloadImages(cardData);
   }, []);
+
+  const showPreview = (product: Product) => {
+    setSelectedProduct(product);
+    setIsProductPage(false)
+  };
+
+  const showProductPage = (product: Product) => {
+    setSelectedProduct(product);
+    setIsProductPage(true);
+  };
+
+  const hidePreview = () => {
+    setSelectedProduct(null);
+    setIsProductPage(false)
+  };
 
   useEffect(() => {
     applyFilters();
@@ -157,20 +174,22 @@ const WomensCards: React.FC = () => {
             <Carditems
               key={index}
               product={card}
+              item={card}
               src={card.src}
               text={card.text}
               label={card.label}
               description={card.description}
-              onClick={() => setSelectedProduct(card)}
+              onClick={showPreview}
+              onViewProduct={showProductPage}
             />
           ))}
         </div>
       </div>
-      {selectedProduct && (
-        <ProductPreviewPopup
-          product={selectedProduct}
-          onClose={() => setSelectedProduct(null)}
-        />
+      {selectedProduct  && !isProductPage && (
+        <ProductPreviewPopup product={selectedProduct} onClose={hidePreview} />
+      )}
+      {selectedProduct && isProductPage && (
+        <ProductPage product={selectedProduct} onClose={hidePreview} />
       )}
     </div>
   );
