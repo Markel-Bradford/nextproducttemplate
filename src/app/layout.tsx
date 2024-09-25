@@ -1,10 +1,11 @@
 import Navbar from "@/Components/Navbar";
 import "../styles/globals.css";
 import Footer from "@/Components/Footer";
-import { config } from '@fortawesome/fontawesome-svg-core';
-import '@fortawesome/fontawesome-svg-core/styles.css'; // Import FontAwesome styles
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css"; // Import FontAwesome styles
 import ScrollToTop from "@/ScrollToTop";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+import { ShoppingCartProvider } from "@/context/ShoppingCartContext";
 
 config.autoAddCss = false; // Disable auto-adding FontAwesome CSS
 
@@ -20,12 +21,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-     <body> 
-      <Analytics />
-      <ScrollToTop />
-        <Navbar />
-        {children}
-        <Footer />
+      <body>
+        <ShoppingCartProvider>
+          <Analytics />
+          <ScrollToTop />
+          <Navbar />
+          {children}
+          <Footer />
+        </ShoppingCartProvider>
       </body>
     </html>
   );

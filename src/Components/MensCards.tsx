@@ -6,8 +6,10 @@ import ProductPreviewPopup from "./ProductPreview";
 import SideMenu from "./SideMenu";
 import classNames from "classnames";
 import ProductPage from "@/Components/ProductPage";
+import { useShoppingCart } from "@/context/ShoppingCartContext";
 
 interface Product {
+  id: number;
   src: string;
   text: string;
   description: string;
@@ -20,96 +22,112 @@ interface Filters {
 
 const cardData: Product[] = [
   {
+    id: 1,
     src: "/abstractshirt.jpeg",
     text: "Platinum White T",
     description: "Classic T-shirt for men. Comfortable and stylish.",
     label: "T-Shirt",
   },
   {
+    id: 2,
     src: "/blackt.jpeg",
     text: "Platinum Black T",
     description: "Trendy skinny jeans for a modern look.",
     label: "T-Shirt",
   },
   {
+    id: 3,
     src: "/redt.jpeg",
     text: "Platinum Red T",
     description: "Classic T-shirt for men. Comfortable and stylish.",
     label: "T-Shirt",
   },
   {
+    id: 4,
     src: "/bluet.jpeg",
     text: "Platinum Blue T",
     description: "Classic T-shirt for men. Comfortable and stylish.",
     label: "T-Shirt",
   },
   {
+    id: 5,
     src: "/greent.jpeg",
     text: "Platinum Green T",
     description: "Classic T-shirt for men. Comfortable and stylish.",
     label: "T-Shirt",
   },
   {
+    id: 6,
     src: "/pinkt.jpeg",
     text: "Platinum Pink T",
     description: "Classic T-shirt for men. Comfortable and stylish.",
     label: "T-Shirt",
   },
   {
+    id: 7,
     src: "/blackjoggers.jpeg",
     text: "Platinum Black Joggers",
     description: "Comfortable and stylish joggers for men.",
     label: "Joggers",
   },
   {
+    id: 8,
     src: "/whitejoggers.jpeg",
     text: "Platinum White Joggers",
     description: "Comfortable and stylish joggers for men.",
     label: "Joggers",
   },
   {
+    id: 9,
     src: "/brownjoggers.jpeg",
     text: "Platinum Khaki Joggers",
     description: "Comfortable and stylish joggers for men.",
     label: "Joggers",
   },
   {
+    id: 10,
     src: "/mensskinnys.jpeg",
     text: "Platinum Grey Skinnys",
     description: "Stylish denim skinny jeans made to fit you.",
     label: "Jeans",
   },
   {
+    id: 11,
     src: "/blackskinny.jpeg",
     text: "Platinum Black Skinnys",
     description: "Stylish denim skinny jeans made to fit you.",
     label: "Jeans",
   },
   {
+    id: 12,
     src: "/redskinny.jpeg",
     text: "Platinum Red Skinnys",
     description: "Stylish denim skinny jeans made to fit you.",
     label: "Jeans",
   },
   {
+    id: 13,
     src: "/blueskinny.jpeg",
     text: "Platinum Blue Skinnys",
     description: "Stylish denim skinny jeans made to fit you.",
     label: "Jeans",
   },
   {
+    id: 14,
     src: "/whiteskinny.jpeg",
     text: "Platinum White Skinnys",
     description: "Stylish denim skinny jeans made to fit you.",
     label: "Jeans",
   },
   {
+    id: 15,
     src: "/blackleather.jpeg",
     text: "Platinum Black Leather",
     description: "Real and stylish leather. Designed with comfort in mind.",
     label: "Jackets",
   },
   {
+    id: 16,
     src: "/greyleather.jpeg",
     text: "Platinum Grey Leather",
     description: "Real and stylish leather. Designed with comfort in mind.",
@@ -123,7 +141,7 @@ const MensCards: React.FC = () => {
   const [isProductPage, setIsProductPage] = useState(false)
   const [filteredCards, setFilteredCards] = useState<Product[]>(cardData);
   const [filters, setFilters] = useState<Filters>({ label: [] });
-
+  
   useEffect(() => {
     console.log("cardData", cardData);
     const preloadImages = (images: Product[]) => {
@@ -173,6 +191,7 @@ const MensCards: React.FC = () => {
         <div className="relative mt-12 mb-11 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
           {filteredCards.map((card, index) => (
             <Carditems
+              id={card.id}
               key={index}
               item={card}
               product={card}

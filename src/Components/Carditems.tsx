@@ -5,8 +5,10 @@ import { useInView } from "react-intersection-observer";
 import classNames from "classnames";
 import Image from "next/image";
 import ProductPage from "@/Components/ProductPage";
+import { useShoppingCart } from "@/context/ShoppingCartContext";
 
 interface Product {
+  id: number;
   src: string;
   text: string;
   description: string;
@@ -14,6 +16,7 @@ interface Product {
 }
 
 interface Item {
+  id: number;
   src: string;
   text: string;
   description: string;
@@ -22,6 +25,7 @@ interface Item {
 
 interface CardItemsProps {
   product: Product;
+  id: number;
   item: Item;
   src: string;
   text: string;
@@ -36,6 +40,8 @@ const Carditems: React.FC<CardItemsProps> = (props) => {
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  const { increaseCartQty } = useShoppingCart();
 
   return (
     <li
@@ -67,18 +73,24 @@ const Carditems: React.FC<CardItemsProps> = (props) => {
         </div>
         <div className="flex w-full justify-around items-center gap-4">
           <button
-            className="flex h-14 max-lg:h-[40px] items-center justify-center w-2/5 border-solid border-black border-2 text-white bg-black max-lg:text-sm hover:bg-zinc-700 z-50"
+            className="flex h-14 max-lg:h-[40px] items-center justify-center w-2/5 text-white bg-black max-lg:text-sm hover:bg-zinc-700 z-50"
             onClick={() => props.onClick(props.product)}
           >
             Preview
           </button>
           <button
-            className="flex h-14 max-lg:h-[40px] items-center justify-center w-3/5 border-solid border-black border-2 text-white max-lg:text-sm bg-black hover:bg-zinc-700 z-50"
+            className="flex h-14 max-lg:h-[40px] items-center justify-center w-3/5 text-white max-lg:text-sm bg-black hover:bg-zinc-700 z-50"
             onClick={() => props.onViewProduct(props.item)}
           >
             View Product
           </button>
         </div>
+        <button 
+          className="flex items-center justify-center mt-4 text-white max-lg:text-sm bg-black h-14 max-lg:h-[40px] w-full hover:bg-green-700 z-50"
+          onClick={() => increaseCartQty(props.product.id)}
+        >
+          Add to Cart
+        </button>
       </div>
     </li>
   );
