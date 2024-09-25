@@ -42,6 +42,7 @@ const Carditems: React.FC<CardItemsProps> = (props) => {
   });
 
   const { increaseCartQty } = useShoppingCart();
+  console.log(increaseCartQty); 
 
   return (
     <li
