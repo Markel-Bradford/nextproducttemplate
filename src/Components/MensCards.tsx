@@ -14,6 +14,7 @@ interface Product {
   text: string;
   description: string;
   label: string;
+  quantity: number;
 }
 
 interface Filters {
@@ -27,6 +28,7 @@ const cardData: Product[] = [
     text: "Platinum White T",
     description: "Classic T-shirt for men. Comfortable and stylish.",
     label: "T-Shirt",
+    quantity: 50,
   },
   {
     id: 2,
@@ -34,6 +36,7 @@ const cardData: Product[] = [
     text: "Platinum Black T",
     description: "Trendy skinny jeans for a modern look.",
     label: "T-Shirt",
+    quantity: 50,
   },
   {
     id: 3,
@@ -41,6 +44,7 @@ const cardData: Product[] = [
     text: "Platinum Red T",
     description: "Classic T-shirt for men. Comfortable and stylish.",
     label: "T-Shirt",
+    quantity: 50,
   },
   {
     id: 4,
@@ -48,6 +52,7 @@ const cardData: Product[] = [
     text: "Platinum Blue T",
     description: "Classic T-shirt for men. Comfortable and stylish.",
     label: "T-Shirt",
+    quantity: 50,
   },
   {
     id: 5,
@@ -55,6 +60,7 @@ const cardData: Product[] = [
     text: "Platinum Green T",
     description: "Classic T-shirt for men. Comfortable and stylish.",
     label: "T-Shirt",
+    quantity: 50,
   },
   {
     id: 6,
@@ -62,6 +68,7 @@ const cardData: Product[] = [
     text: "Platinum Pink T",
     description: "Classic T-shirt for men. Comfortable and stylish.",
     label: "T-Shirt",
+    quantity: 50,
   },
   {
     id: 7,
@@ -69,6 +76,7 @@ const cardData: Product[] = [
     text: "Platinum Black Joggers",
     description: "Comfortable and stylish joggers for men.",
     label: "Joggers",
+    quantity: 50,
   },
   {
     id: 8,
@@ -76,6 +84,7 @@ const cardData: Product[] = [
     text: "Platinum White Joggers",
     description: "Comfortable and stylish joggers for men.",
     label: "Joggers",
+    quantity: 50,
   },
   {
     id: 9,
@@ -83,6 +92,7 @@ const cardData: Product[] = [
     text: "Platinum Khaki Joggers",
     description: "Comfortable and stylish joggers for men.",
     label: "Joggers",
+    quantity: 50,
   },
   {
     id: 10,
@@ -90,6 +100,7 @@ const cardData: Product[] = [
     text: "Platinum Grey Skinnys",
     description: "Stylish denim skinny jeans made to fit you.",
     label: "Jeans",
+    quantity: 50,
   },
   {
     id: 11,
@@ -97,6 +108,7 @@ const cardData: Product[] = [
     text: "Platinum Black Skinnys",
     description: "Stylish denim skinny jeans made to fit you.",
     label: "Jeans",
+    quantity: 50,
   },
   {
     id: 12,
@@ -104,6 +116,7 @@ const cardData: Product[] = [
     text: "Platinum Red Skinnys",
     description: "Stylish denim skinny jeans made to fit you.",
     label: "Jeans",
+    quantity: 50,
   },
   {
     id: 13,
@@ -111,6 +124,7 @@ const cardData: Product[] = [
     text: "Platinum Blue Skinnys",
     description: "Stylish denim skinny jeans made to fit you.",
     label: "Jeans",
+    quantity: 50,
   },
   {
     id: 14,
@@ -118,6 +132,7 @@ const cardData: Product[] = [
     text: "Platinum White Skinnys",
     description: "Stylish denim skinny jeans made to fit you.",
     label: "Jeans",
+    quantity: 50,
   },
   {
     id: 15,
@@ -125,6 +140,7 @@ const cardData: Product[] = [
     text: "Platinum Black Leather",
     description: "Real and stylish leather. Designed with comfort in mind.",
     label: "Jackets",
+    quantity: 50,
   },
   {
     id: 16,
@@ -132,6 +148,7 @@ const cardData: Product[] = [
     text: "Platinum Grey Leather",
     description: "Real and stylish leather. Designed with comfort in mind.",
     label: "Jackets",
+    quantity: 50,
   },
   // Add the rest of your products here...
 ];
@@ -191,11 +208,12 @@ const MensCards: React.FC = () => {
         <div className="relative mt-12 mb-11 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
           {filteredCards.map((card, index) => (
             <Carditems
-              id={card.id}
               key={index}
+              id={card.id}
               item={card}
               product={card}
               src={card.src}
+              quantity={card.quantity}
               text={card.text}
               label={card.label}
               description={card.description}
