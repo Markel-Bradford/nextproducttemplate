@@ -5,16 +5,18 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
+import { ShoppingCart } from "./ShoppingCart";
 
 
 
 const Navbar = () => {
 
-  const [click, setClick] =
-    useState(false); /*creates opposite state to open and close menu on click*/
+  const [click, setClick] = useState(false); /*creates opposite state to open and close menu on click*/
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const handleClick = () => setClick(!click); /*reverses false click state set*/
   const closeMobileMenu = () => setClick(false);
+  const toggleCart = () => setIsCartOpen(prev => !prev)
   
   return (
       <nav className="bg-white h-20 flex justify-center items-center text-xl sticky top-0 z-[1000] shadow-[0_4px_8px_rgba(0,0,0,0.6)]" >
@@ -61,7 +63,15 @@ const Navbar = () => {
                 Contact
               </Link>
             </li>
+            <li className="h-20">
+              <button className="max-lg:table max-lg:w-full max-lg:text-center max-lg:p-8 max-lg:hover:bg-black max-lg:hover:text-white text-black flex items-center no-underline px-4 h-full hover:border-b-zinc-600 hover:border-b-solid hover:border-b-[4px] transition-all"
+                onClick={toggleCart}
+              >
+                Cart
+              </button>
+            </li>
           </ul>
+          <ShoppingCart isOpen={isCartOpen} />
         </div>
       </nav>
   );

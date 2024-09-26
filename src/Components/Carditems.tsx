@@ -14,6 +14,7 @@ interface Product {
   description: string;
   label: string;
   quantity: number;
+  price: number;
 }
 
 interface Item {
@@ -23,6 +24,7 @@ interface Item {
   description: string;
   label: string;
   quantity: number;
+  price: number;
 }
 
 interface CardItemsProps {
@@ -33,12 +35,13 @@ interface CardItemsProps {
   text: string;
   label: string;
   quantity: number;
+  price: number;
   description: string;
   onClick: (product: Product) => void;
   onViewProduct: (product: Product) => void;
 }
 
-const Carditems: React.FC<CardItemsProps> = (props, id) => {
+const Carditems: React.FC<CardItemsProps> = (props) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -46,7 +49,7 @@ const Carditems: React.FC<CardItemsProps> = (props, id) => {
 
   const { getItemQuantity, increaseCartQty, decreaseCartQty, removeFromCart } =
     useShoppingCart();
-  const quantity = getItemQuantity(id);
+  const quantity = getItemQuantity(props.product.id);
 
   return (
     <li
