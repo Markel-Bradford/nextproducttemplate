@@ -3,7 +3,7 @@
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import CartItem from "./CartItems"
 import { FormatCurrency } from "@/utilities/FormatCurrency"
-import { cardData } from "@/app/data/ProductData"
+import { cardData, womensCardData } from "@/app/data/ProductData"
 
 
 type ShoppingCartProps = {
@@ -14,7 +14,7 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
   const { closeCart, cartItems } = useShoppingCart()
 
   const total = cartItems.reduce((total, cartItems) => {
-    const product = cardData.find(item => item.id === cartItems.id)
+    const product = cardData.find(item => item.id === cartItems.id) || womensCardData.find(item => item.id === cartItems.id)
     return total + (product?.price || 0) * cartItems.quantity
   }, 0)
 

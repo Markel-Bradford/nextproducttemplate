@@ -12,7 +12,7 @@ import { useShoppingCart } from "@/context/ShoppingCartContext";
 const Navbar = () => {
 
   const [click, setClick] = useState(false); /*creates opposite state to open and close menu on click*/
-  const {toggleCart, getItemQuantity} = useShoppingCart();
+  const {toggleCart, getItemQuantity, cartQuantity} = useShoppingCart();
 
   const handleClick = () => setClick(!click); /*reverses false click state set*/
   const closeMobileMenu = () => setClick(false);
@@ -24,12 +24,14 @@ const Navbar = () => {
             <Image width={100} height={200} className="w-28 h-[88px]" src="/pthreads.png" alt="" />
           </Link>
           <div>
-          <button className="lg:hidden max-lg:w-full max-lg:text-center max-lg:p-8  max-lg:hover:bg-black max-lg:hover:text-white text-black flex items-center no-underline px-4 h-full hover:border-b-zinc-600 hover:border-b-solid hover:border-b-[4px] transition-all"
+          <button className="lg:hidden max-lg:w-full max-lg:text-center max-lg:p-6  max-lg:hover:bg-black max-lg:hover:text-white text-black flex items-center no-underline px-4 h-full hover:border-b-zinc-600 hover:border-b-solid hover:border-b-[4px] transition-all"
                 onClick={toggleCart}
               >
                 <FontAwesomeIcon icon={faCartShopping} />
-              </button>
+                <span className="mb-5 z-50 bg-red-600 text-white text-xs rounded-full px-1 ">{cartQuantity}</span>
+              </button>       
           </div>
+
           <div className="hidden max-lg:contents max-lg:absolute max-lg:right-5 text-3xl cursor-pointer" onClick={handleClick}>
           <FontAwesomeIcon icon={click ? faTimes : faBars} />
             {/*? is equal to true. : creates toggle from one item to another.  */}
@@ -74,6 +76,7 @@ const Navbar = () => {
                 onClick={toggleCart}
               >
                 <FontAwesomeIcon icon={faCartShopping} />
+                <span className="mb-5 z-50 bg-red-600 text-white text-xs rounded-full px-1 ">{cartQuantity}</span>
               </button>
             </li>
           </ul>
