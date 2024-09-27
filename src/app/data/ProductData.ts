@@ -304,12 +304,12 @@ export const cardData = [
           price: 49.99
       },
       {
-        id: 17,
-        src: "/womensdenim.jpg",
-        text: "Women's Denim Jacket",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        label: "Womens",
+        id: 30,
+        price: 49.99,
         quantity: 50,
-        price: 49.99
+        src: "/womensimgs/leather.jpeg",
+        text: "Platinum Black Leather",
+        description: "Luxious leather to flaunt your style.",
+        label: "Jackets",
       },
   ]
