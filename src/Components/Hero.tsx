@@ -8,11 +8,11 @@ const Hero: React.FC = () => {
 
   return (
     <div className="max-w-[1800px] flex justify-center items-center bg-white mx-auto px-24 max-lg:px-0 mt-12 h-1/3 max-lg:flex-col max-md:w-full">
-      <div className="leading-8 w-full text-black animate-fade max-lg:my-6">
-        <h1 className="text-[10vw] mb-[5%] font-bold lg:mb-[5%] lg:text-[4.5vw] max-lg:text-center">
+      <div className="flex flex-col leading-8 justify-around w-full text-black animate-fade max-lg:my-6">
+        <h1 className="text-[10vw] mb-[5%] font-bold lg:mb-[5%] lg:text-[48px] 2xl:text-[80px] max-lg:text-center">
           Platinum Threads
         </h1>
-        <p className="text-[6vw] lg:text-[2.5vw] max-lg:text-center">
+        <p className="text-[6vw] lg:text-[40px] 2xl:text-[60px] max-lg:text-center">
           Let your style shine
         </p>
       </div>
