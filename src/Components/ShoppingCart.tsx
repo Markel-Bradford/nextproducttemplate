@@ -1,6 +1,5 @@
 "use client"
 
-import { Offcanvas, Stack } from "react-bootstrap"
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import CartItem from "./CartItems"
 import { FormatCurrency } from "@/utilities/FormatCurrency"
@@ -21,12 +20,9 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
 
 
   return (
-    <Offcanvas show={isOpen} onHide={closeCart} placement="end">
-      <Offcanvas.Header closeButton>
-        <Offcanvas.Title>Cart</Offcanvas.Title>
-      </Offcanvas.Header>
-      <Offcanvas.Body>
-        <Stack gap={3}>
+    <div className={`${isOpen ? "fixed top-[80px] right-0 w-[300px] h-full bg-slate-100 transition-all z-[999] overflow-y-scroll": "fixed top-0 -right-full w-[300px] h-full bg-slate-100 transition-all z-[999]"}`}>
+        <h1 className="text-[28px] text-center mt-12">Cart</h1>
+        <div className="flex flex-col p-5">
           {cartItems.map(item => (
             <CartItem key={item.id} {...item} />
           ))}
@@ -34,8 +30,7 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
             Total{" "}
             {FormatCurrency(total)}
           </div>
-        </Stack>
-      </Offcanvas.Body>
-    </Offcanvas>
+          </div>
+    </div>
   )
 }

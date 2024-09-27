@@ -1,7 +1,7 @@
-import { Button, Stack } from "react-bootstrap"
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import { cardData } from "@/app/data/ProductData"
 import { FormatCurrency } from "@/utilities/FormatCurrency"
+import Image from "next/image"
 
 
 type CartItemProps = {
@@ -15,32 +15,34 @@ export default function CartItem({ id, quantity }: CartItemProps) {
   if (item == null) return null
 
   return (
-    <Stack direction="horizontal" gap={2} className="d-flex align-items-center">
-      <img
+    <div className="flex flex-col justify-center items-center">
+      <Image
         src={item.src}
-        style={{ width: "125px", height: "75px", objectFit: "cover" }}
+        className="w-[200px] h-[125px] object-cover"
+        height={300}
+        width={500}
+        alt=""
       />
-      <div className="me-auto">
-        <div>
-          {item.text}{" "}
-          {quantity > 1 && (
-            <span className="text-muted" style={{ fontSize: ".65rem" }}>
-              x{quantity}
-            </span>
-          )}
-        </div>
-        <div className="text-muted" style={{ fontSize: ".75rem" }}>
-          {FormatCurrency(item.price)}
+      <div className="mx-auto">
+        <div className="flex justify-between text-center">      
+        {FormatCurrency(item.price)} {" "}
+          {item.text}
         </div>
       </div>
-      <div> {FormatCurrency(item.price * quantity)}</div>
-      <Button
-        variant="outline-danger"
-        size="sm"
+      <div className="flex w-full justify-around -mb-1"> 
+      {quantity > 1 && (
+            <span className="">
+              qty {quantity}
+            </span>
+          )} {" "}
+        {FormatCurrency(item.price * quantity)}
+        </div>
+      <button
         onClick={() => removeFromCart(item.id)}
+        className="font-bold hover:text-red-600 transition-all mb-8"
       >
-        &times;
-      </Button>
-    </Stack>
+        Remove
+      </button>
+    </div>
   )
 }
