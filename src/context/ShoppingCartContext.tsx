@@ -4,7 +4,7 @@ import { createContext, ReactNode, useContext, useState } from "react";
 
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { ShoppingCart } from "@/Components/ShoppingCart";
-import { cardData } from "@/app/data/ProductData";
+import { cardData, featuredCards, womensCardData } from "@/app/data/ProductData";
 
 type ShoppingCartProviderProps = {
   children: ReactNode;
@@ -47,7 +47,10 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
     []
   );
 
-  const getProductByID = (id: number) => cardData.find(item => item.id === id)
+  const getProductByID = (id: number) =>
+    cardData.find((item) => item.id === id) ||
+    womensCardData.find((item) => item.id === id)||
+    featuredCards.find((item) => item.id === id);
 
   const cartQuantity = cartItems.reduce(
     (quantity, item) => item.quantity + quantity,
@@ -57,7 +60,6 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
   const openCart = () => setIsOpen(true);
   const closeCart = () => setIsOpen(false);
   const toggleCart = () => setIsOpen((prevState) => !prevState);
-
 
   function getItemQuantity(id: number) {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
@@ -113,7 +115,7 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
         toggleCart,
         cartItems,
         cartQuantity,
-        getProductByID
+        getProductByID,
       }}>
       {children}
       <ShoppingCart isOpen={isOpen} />

@@ -6,6 +6,7 @@ import Carditems from "./Carditems";
 import ProductPreviewPopup from "./ProductPreview";
 import SideMenu from "./SideMenu";
 import ProductPage from "./ProductPage";
+import { womensCardData } from "@/app/data/ProductData";
 
 interface Product {
   id: number;
@@ -21,157 +22,10 @@ interface Filters {
   label: string[];
 }
 
-const cardData: Product[] = [
-  {
-    id: 17,
-    price: 49.99,
-    quantity: 50,
-    src: "/womensdenim.jpg",
-    text: "Platinum White T",
-    description: "Classic T-shirt for men. Comfortable and stylish.",
-    label: "T-Shirt",
-  },
-  {
-    id: 18,
-    price: 49.99,
-    quantity: 50,
-    src: "/womensdenim.jpg",
-    text: "Platinum White T",
-    description: "Trendy skinny jeans for a modern look.",
-    label: "T-Shirt",
-  },
-  {
-    id: 19,
-    price: 49.99,
-    quantity: 50,
-    src: "/womensdenim.jpg",
-    text: "Platinum White T",
-    description: "Classic T-shirt for men. Comfortable and stylish.",
-    label: "T-Shirt",
-  },
-  {
-    id: 20,
-    price: 49.99,
-    quantity: 50,
-    src: "/womensdenim.jpg",
-    text: "Platinum White T",
-    description: "Classic T-shirt for men. Comfortable and stylish.",
-    label: "T-Shirt",
-  },
-  {
-    id: 21,
-    price: 49.99,
-    quantity: 50,
-    src: "/womensdenim.jpg",
-    text: "Platinum White T",
-    description: "Classic T-shirt for men. Comfortable and stylish.",
-    label: "T-Shirt",
-  },
-  {
-    id: 22,
-    price: 49.99,
-    quantity: 50,
-    src: "/womensdenim.jpg",
-    text: "Platinum White T",
-    description: "Classic T-shirt for men. Comfortable and stylish.",
-    label: "T-Shirt",
-  },
-  {
-    id: 23,
-    price: 49.99,
-    quantity: 50,
-    src: "/womensdenim.jpg",
-    text: "Platinum Joggers",
-    description: "Classic T-shirt for men. Comfortable and stylish.",
-    label: "Joggers",
-  },
-  {
-    id: 24,
-    price: 49.99,
-    quantity: 50,
-    src: "/womensdenim.jpg",
-    text: "Platinum Joggers",
-    description: "Classic T-shirt for men. Comfortable and stylish.",
-    label: "Joggers",
-  },
-  {
-    id: 25,
-    price: 49.99,
-    quantity: 50,
-    src: "/womensdenim.jpg",
-    text: "Platinum Joggers",
-    description: "Classic T-shirt for men. Comfortable and stylish.",
-    label: "Joggers",
-  },
-  {
-    id: 26,
-    price: 49.99,
-    quantity: 50,
-    src: "/womensdenim.jpg",
-    text: "Platinum Skinny's",
-    description: "Classic T-shirt for men. Comfortable and stylish.",
-    label: "Jeans",
-  },
-  {
-    id: 27,
-    price: 49.99,
-    quantity: 50,
-    src: "/womensdenim.jpg",
-    text: "Platinum Skinny's",
-    description: "Classic T-shirt for men. Comfortable and stylish.",
-    label: "Jeans",
-  },
-  {
-    id: 28,
-    price: 49.99,
-    quantity: 50,
-    src: "/womensdenim.jpg",
-    text: "Platinum Skinny's",
-    description: "Classic T-shirt for men. Comfortable and stylish.",
-    label: "Jeans",
-  },
-  {
-    id: 29,
-    price: 49.99,
-    quantity: 50,
-    src: "/womensdenim.jpg",
-    text: "Platinum Skinny's",
-    description: "Classic T-shirt for men. Comfortable and stylish.",
-    label: "Jeans",
-  },
-  {
-    id: 30,
-    price: 49.99,
-    quantity: 50,
-    src: "/womensdenim.jpg",
-    text: "Platinum Skinny's",
-    description: "Classic T-shirt for men. Comfortable and stylish.",
-    label: "Jeans",
-  },
-  {
-    id: 31,
-    price: 49.99,
-    quantity: 50,
-    src: "/womensdenim.jpg",
-    text: "Platinum Leather",
-    description: "Classic T-shirt for men. Comfortable and stylish.",
-    label: "Jackets",
-  },
-  {
-    id: 32,
-    price: 49.99,
-    quantity: 50,
-    src: "/womensdenim.jpg",
-    text: "Platinum Leather",
-    description: "Classic T-shirt for men. Comfortable and stylish.",
-    label: "Jackets",
-  },
-];
-
 const WomensCards: React.FC = () => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isProductPage, setIsProductPage] = useState(false)
-  const [filteredCards, setFilteredCards] = useState<Product[]>(cardData);
+  const [filteredCards, setFilteredCards] = useState<Product[]>(womensCardData);
   const [filters, setFilters] = useState<Filters>({
     label: [],
   });
@@ -184,7 +38,7 @@ const WomensCards: React.FC = () => {
       });
     };
 
-    preloadImages(cardData);
+    preloadImages(womensCardData);
   }, []);
 
   const showPreview = (product: Product) => {
@@ -207,7 +61,7 @@ const WomensCards: React.FC = () => {
   }, [filters]);
 
   const applyFilters = () => {
-    let filtered = cardData;
+    let filtered = womensCardData;
 
     if (filters.label.length > 0) {
       filtered = filtered.filter((card) => filters.label.includes(card.label));
