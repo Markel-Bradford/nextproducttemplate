@@ -20,7 +20,7 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
 
 
   return (
-    <div className={`${isOpen ? "fixed top-[80px] right-0 w-[300px] h-full bg-slate-100 transition-all z-[999] overflow-y-scroll": "fixed top-0 -right-full w-[300px] h-full bg-slate-100 transition-all z-[999]"}`}>
+    <div className={`${isOpen ? "fixed top-[80px] right-[52px] w-[300px] h-full bg-slate-100 transition-all z-[999] overflow-y-scroll shadow-[0_10px_10px_rgba(0,0,0,0.6)] max-[1800px]:right-0": "fixed top-0 -right-full w-[300px] h-full bg-slate-100 transition-all z-[999]"}`}>
         <h1 className="text-[28px] text-center mt-12">Cart</h1>
         <div className="flex flex-col p-5">
           {cartItems.map(item => (

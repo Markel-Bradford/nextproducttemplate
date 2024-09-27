@@ -24,12 +24,12 @@ export default function CartItem({ id, quantity }: CartItemProps) {
         alt=""
       />
       <div className="mx-auto">
-        <div className="flex justify-between text-center">      
+        <div className="flex justify-between text-center font-semibold">      
         {FormatCurrency(item.price)} {" "}
           {item.text}
         </div>
       </div>
-      <div className="flex w-full justify-around -mb-1"> 
+      <div className="flex w-full justify-around font-semibold mb-2"> 
       {quantity > 1 && (
             <span className="">
               qty {quantity}
